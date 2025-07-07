@@ -99,7 +99,7 @@ class ObservationPhoto extends Realm.Object {
     };
   }
 
-  static async new( uri: string, position ) {
+  static async new( uri: string, position: number ) {
     const photo = await Photo.new( uri );
     return {
       _created_at: new Date( ),
@@ -111,7 +111,10 @@ class ObservationPhoto extends Realm.Object {
     };
   }
 
-  static createObsPhotosWithPosition = async ( photos, { position, local } ) => {
+  static createObsPhotosWithPosition = async (
+    photos: string[] | { image: { uri: string } }[],
+    { position, local }: { position: number, local: boolean }
+  ) => {
     let photoPosition = position;
     return Promise.all(
       photos.map( async photo => {
