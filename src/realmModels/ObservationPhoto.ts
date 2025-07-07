@@ -14,16 +14,6 @@ class ObservationPhoto extends Realm.Object {
 
   _updated_at?: Date;
 
-  uuid!: string;
-
-  id?: number;
-
-  photo?: Photo;
-
-  position?: number;
-
-  // TODO: I don't know how to type the assignee property
-
   static OBSERVATION_PHOTOS_FIELDS = {
     id: true,
     photo: Photo.PHOTO_FIELDS,
