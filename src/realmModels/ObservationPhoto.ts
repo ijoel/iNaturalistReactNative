@@ -127,7 +127,7 @@ class ObservationPhoto extends Realm.Object {
     );
   };
 
-  static async deleteRemotePhoto( realm, uri, currentObservation ) {
+  static async deleteRemotePhoto( realm, uri: string, currentObservation ) {
     const obsPhotoToDelete = currentObservation?.observationPhotos?.find(
       p => p.photo?.url === uri
     );
