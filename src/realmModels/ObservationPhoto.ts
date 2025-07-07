@@ -48,7 +48,7 @@ class ObservationPhoto extends Realm.Object {
     return localObsPhoto;
   }
 
-  static mapPhotoForUpload( observationID, photo: RealmPhoto ) {
+  static mapPhotoForUpload( photo: RealmPhoto ) {
     const uri = Photo.getLocalPhotoUri( photo.localFilePath );
     return {
       file: new FileUpload( {
